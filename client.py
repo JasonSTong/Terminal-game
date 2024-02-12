@@ -358,3 +358,4 @@ if __name__ == '__main__':
 # Function: ('', 'cprint')
 # Function: ('', 'async_run')
 # Function: ('', 'format_message')
+# Function: ('', 'center_text')

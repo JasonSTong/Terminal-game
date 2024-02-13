@@ -359,3 +359,4 @@ if __name__ == '__main__':
 # Function: ('', 'async_run')
 # Function: ('', 'format_message')
 # Function: ('', 'center_text')
+# Function: ('', 'left_align_text')

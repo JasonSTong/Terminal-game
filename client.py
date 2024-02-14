@@ -360,3 +360,4 @@ if __name__ == '__main__':
 # Function: ('', 'format_message')
 # Function: ('', 'center_text')
 # Function: ('', 'left_align_text')
+# Function: ('', 'generate_table_string')

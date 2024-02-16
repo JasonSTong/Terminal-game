@@ -362,3 +362,4 @@ if __name__ == '__main__':
 # Function: ('', 'left_align_text')
 # Function: ('', 'generate_table_string')
 # Function: ('', 'room_list')
+# Function: ('', 'room_player_status')

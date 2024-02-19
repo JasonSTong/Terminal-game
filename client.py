@@ -365,3 +365,4 @@ if __name__ == '__main__':
 # Function: ('', 'room_player_status')
 # Function: ('', 'player_status')
 # Function: ('', 'help')
+# Function: ('', '__init__')

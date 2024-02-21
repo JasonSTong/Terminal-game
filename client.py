@@ -367,3 +367,4 @@ if __name__ == '__main__':
 # Function: ('', 'help')
 # Function: ('', '__init__')
 # Function: ('async ', 'send_action')
+# Function: ('async ', 'connect')

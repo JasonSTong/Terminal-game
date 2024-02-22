@@ -368,3 +368,4 @@ if __name__ == '__main__':
 # Function: ('', '__init__')
 # Function: ('async ', 'send_action')
 # Function: ('async ', 'connect')
+# Function: ('', 'sync_info')

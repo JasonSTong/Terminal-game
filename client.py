@@ -369,3 +369,4 @@ if __name__ == '__main__':
 # Function: ('async ', 'send_action')
 # Function: ('async ', 'connect')
 # Function: ('', 'sync_info')
+# Function: ('async ', 'list_rooms')

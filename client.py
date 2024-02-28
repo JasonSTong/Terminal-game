@@ -374,3 +374,4 @@ if __name__ == '__main__':
 # Function: ('async ', 'player_info')
 # Function: ('async ', 'logout')
 # Function: ('async ', 'create_room')
+# Function: ('async ', 'join_room')

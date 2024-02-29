@@ -375,3 +375,4 @@ if __name__ == '__main__':
 # Function: ('async ', 'logout')
 # Function: ('async ', 'create_room')
 # Function: ('async ', 'join_room')
+# Function: ('async ', 'leave_room')

@@ -379,3 +379,4 @@ if __name__ == '__main__':
 # Function: ('async ', 'start_game')
 # Function: ('async ', 'send_message')
 # Function: ('async ', 'change_name')
+# Function: ('async ', 'handle_messages')

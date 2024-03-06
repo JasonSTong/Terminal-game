@@ -381,3 +381,4 @@ if __name__ == '__main__':
 # Function: ('async ', 'change_name')
 # Function: ('async ', 'handle_messages')
 # Function: ('async ', 'command_loop')
+# Function: ('async ', 'run')

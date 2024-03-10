@@ -70,3 +70,4 @@ if __name__ == "__main__":
 # Function: ('', '__init__')
 # Function: ('async ', 'handle_message')
 # Function: ('async ', 'dispatch_message')
+# Function: ('async ', 'main')

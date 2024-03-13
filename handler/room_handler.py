@@ -40,3 +40,4 @@ class RoomHandler:
             await self.room_manager.chat_message(client_id, message.get("message"))
 # Function: ('', '__init__')
 # Function: ('async ', 'initialize')
+# Function: ('async ', 'enter')

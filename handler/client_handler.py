@@ -35,3 +35,4 @@ class ClientHandler:
 
 # Function: ('', '__init__')
 # Function: ('async ', 'initialize')
+# Function: ('async ', 'enter')

@@ -37,3 +37,4 @@ class ClientHandler:
 # Function: ('async ', 'initialize')
 # Function: ('async ', 'enter')
 # Function: ('async ', 'exit')
+# Function: ('async ', 'handle')

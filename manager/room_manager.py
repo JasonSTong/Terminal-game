@@ -151,3 +151,4 @@ class RoomManager:
                 receiver = cm.get_client(receiver_id)
                 await receiver.send_message({'action': 'message', 'message': f"{sender_name}: {message}"})
 # Function: ('', '__init__')
+# Function: ('', 'incr_room_id')

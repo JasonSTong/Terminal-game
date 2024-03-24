@@ -153,3 +153,4 @@ class RoomManager:
 # Function: ('', '__init__')
 # Function: ('', 'incr_room_id')
 # Function: ('async ', 'create_room')
+# Function: ('', 'get_room')

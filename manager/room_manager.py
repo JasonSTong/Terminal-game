@@ -155,3 +155,4 @@ class RoomManager:
 # Function: ('async ', 'create_room')
 # Function: ('', 'get_room')
 # Function: ('async ', 'delete_room')
+# Function: ('async ', 'list_rooms')

@@ -159,3 +159,4 @@ class RoomManager:
 # Function: ('async ', 'notify_room_status')
 # Function: ('async ', 'broadcast_to_room')
 # Function: ('async ', 'notify_all_client_room_status')
+# Function: ('async ', 'join_room')

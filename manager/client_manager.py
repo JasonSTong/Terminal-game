@@ -74,3 +74,4 @@ class ClientManager:
             return 0, f"info: 客户端 {client_id} 已退出。"
         else:
             return -1, f"error: 客户端 {client_id} 不存在。"# Function: ('', '__init__')
+# Function: ('', 'incr_client_id')

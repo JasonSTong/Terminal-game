@@ -76,3 +76,4 @@ class ClientManager:
             return -1, f"error: 客户端 {client_id} 不存在。"# Function: ('', '__init__')
 # Function: ('', 'incr_client_id')
 # Function: ('', 'create_client')
+# Function: ('', 'get_id_or_name')

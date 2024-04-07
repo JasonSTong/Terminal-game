@@ -78,3 +78,4 @@ class ClientManager:
 # Function: ('', 'create_client')
 # Function: ('', 'get_id_or_name')
 # Function: ('', 'add_client')
+# Function: ('', 'get_client')

@@ -79,3 +79,4 @@ class ClientManager:
 # Function: ('', 'get_id_or_name')
 # Function: ('', 'add_client')
 # Function: ('', 'get_client')
+# Function: ('', 'remove_client')

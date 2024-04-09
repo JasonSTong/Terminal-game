@@ -80,3 +80,4 @@ class ClientManager:
 # Function: ('', 'add_client')
 # Function: ('', 'get_client')
 # Function: ('', 'remove_client')
+# Function: ('', 'get_clients_info')

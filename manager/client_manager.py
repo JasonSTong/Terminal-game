@@ -82,3 +82,4 @@ class ClientManager:
 # Function: ('', 'remove_client')
 # Function: ('', 'get_clients_info')
 # Function: ('', 'get_clients_score')
+# Function: ('', 'get_max_score_by_client_ids')

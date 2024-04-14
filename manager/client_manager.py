@@ -85,3 +85,4 @@ class ClientManager:
 # Function: ('', 'get_max_score_by_client_ids')
 # Function: ('', 'set_owner')
 # Function: ('', 'set_room_id')
+# Function: ('', 'change_state')

@@ -86,3 +86,4 @@ class ClientManager:
 # Function: ('', 'set_owner')
 # Function: ('', 'set_room_id')
 # Function: ('', 'change_state')
+# Function: ('', 'change_username')

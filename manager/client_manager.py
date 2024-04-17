@@ -88,3 +88,4 @@ class ClientManager:
 # Function: ('', 'change_state')
 # Function: ('', 'change_username')
 # Function: ('async ', 'send_message')
+# Function: ('async ', 'send_client_info')

@@ -37,3 +37,4 @@ class TexasHoldem:
 # Class: TexasHoldemEnum
 # Function: ('', '__init__')
 # Function: ('', 'on_enter_login')
+# Function: ('', 'on_enter_room_list')

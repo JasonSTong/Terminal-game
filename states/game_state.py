@@ -38,3 +38,4 @@ class TexasHoldem:
 # Function: ('', '__init__')
 # Function: ('', 'on_enter_login')
 # Function: ('', 'on_enter_room_list')
+# Function: ('', 'on_enter_in_room')

@@ -39,3 +39,4 @@ class TexasHoldem:
 # Function: ('', 'on_enter_login')
 # Function: ('', 'on_enter_room_list')
 # Function: ('', 'on_enter_in_room')
+# Function: ('', 'on_enter_playing')

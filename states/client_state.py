@@ -54,3 +54,4 @@ class ClientSystem:
             print(f"Unknown state: {new_state}")
 # Class: ClientSystemEnum
 # Function: ('', '__init__')
+# Function: ('', 'on_enter_login')

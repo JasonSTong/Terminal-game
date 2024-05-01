@@ -57,3 +57,4 @@ class ClientSystem:
 # Function: ('', 'on_enter_login')
 # Function: ('', 'on_enter_in_room')
 # Function: ('', 'on_enter_playing')
+# Function: ('', 'on_enter_game_over')

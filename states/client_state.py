@@ -59,3 +59,4 @@ class ClientSystem:
 # Function: ('', 'on_enter_playing')
 # Function: ('', 'on_enter_game_over')
 # Function: ('', 'on_enter_exit')
+# Function: ('', 'change_state')

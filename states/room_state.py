@@ -45,3 +45,4 @@ class RoomSystem:
 # Class: RoomSystemEnum
 # Function: ('', '__init__')
 # Function: ('', 'on_playing')
+# Function: ('', 'on_enter_game_over')

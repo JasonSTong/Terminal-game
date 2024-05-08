@@ -46,3 +46,4 @@ class RoomSystem:
 # Function: ('', '__init__')
 # Function: ('', 'on_playing')
 # Function: ('', 'on_enter_game_over')
+# Function: ('', 'on_enter_destroy_room')

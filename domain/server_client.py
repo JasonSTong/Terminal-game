@@ -82,3 +82,4 @@ class Client:
             'room_id': self.room_id,
             'is_owner': self.is_owner
         }# Function: ('', '__init__')
+# Function: ('', 'get_username')

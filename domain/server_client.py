@@ -83,3 +83,4 @@ class Client:
             'is_owner': self.is_owner
         }# Function: ('', '__init__')
 # Function: ('', 'get_username')
+# Function: ('', 'get_client_id')

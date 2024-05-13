@@ -84,3 +84,4 @@ class Client:
         }# Function: ('', '__init__')
 # Function: ('', 'get_username')
 # Function: ('', 'get_client_id')
+# Function: ('', 'get_id_or_name')

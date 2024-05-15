@@ -86,3 +86,4 @@ class Client:
 # Function: ('', 'get_client_id')
 # Function: ('', 'get_id_or_name')
 # Function: ('', 'change_username')
+# Function: ('', 'set_owner')

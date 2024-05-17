@@ -88,3 +88,4 @@ class Client:
 # Function: ('', 'change_username')
 # Function: ('', 'set_owner')
 # Function: ('', 'info')
+# Function: ('async ', 'send_message')

@@ -89,3 +89,4 @@ class Client:
 # Function: ('', 'set_owner')
 # Function: ('', 'info')
 # Function: ('async ', 'send_message')
+# Function: ('async ', 'logout')

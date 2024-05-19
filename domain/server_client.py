@@ -90,3 +90,4 @@ class Client:
 # Function: ('', 'info')
 # Function: ('async ', 'send_message')
 # Function: ('async ', 'logout')
+# Function: ('async ', 'other_login')

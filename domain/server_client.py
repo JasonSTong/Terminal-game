@@ -91,3 +91,4 @@ class Client:
 # Function: ('async ', 'send_message')
 # Function: ('async ', 'logout')
 # Function: ('async ', 'other_login')
+# Function: ('', 'change_state')

@@ -92,3 +92,4 @@ class Client:
 # Function: ('async ', 'logout')
 # Function: ('async ', 'other_login')
 # Function: ('', 'change_state')
+# Function: ('', 'parse_json')

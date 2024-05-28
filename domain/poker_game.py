@@ -103,3 +103,4 @@ class GameState:
 # Function: ('', '__init__')
 # Function: ('', 'evaluate_hand')
 # Function: ('', '__init__')
+# Function: ('', 'deal_hole_cards')

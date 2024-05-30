@@ -105,3 +105,4 @@ class GameState:
 # Function: ('', '__init__')
 # Function: ('', 'deal_hole_cards')
 # Function: ('', 'deal_community_cards')
+# Function: ('async ', 'betting_round')

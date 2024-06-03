@@ -72,3 +72,4 @@ class Room:
                  'is_owner': cm.get_client(p).is_owner} for p in self.clients]
         }
 # Function: ('', '__init__')
+# Function: ('', 'remove_client')

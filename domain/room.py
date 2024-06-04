@@ -73,3 +73,4 @@ class Room:
         }
 # Function: ('', '__init__')
 # Function: ('', 'remove_client')
+# Function: ('async ', 'add_client')

@@ -75,3 +75,4 @@ class Room:
 # Function: ('', 'remove_client')
 # Function: ('async ', 'add_client')
 # Function: ('', 'is_owner')
+# Function: ('', 'get_info')

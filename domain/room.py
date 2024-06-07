@@ -76,3 +76,4 @@ class Room:
 # Function: ('async ', 'add_client')
 # Function: ('', 'is_owner')
 # Function: ('', 'get_info')
+# Function: ('', 'get_room_clients_info')

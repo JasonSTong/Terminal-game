@@ -1,6 +1,6 @@
 from base import cm
-from game.domain.server_client import Client
-from game.states.room_state import RoomSystem, RoomSystemEnum
+from domain.server_client import Client
+from states.room_state import RoomSystem, RoomSystemEnum
 
 
 class Room:
@@ -71,9 +71,3 @@ class Room:
                  'score': cm.get_client(p).score,
                  'is_owner': cm.get_client(p).is_owner} for p in self.clients]
         }
-# Function: ('', '__init__')
-# Function: ('', 'remove_client')
-# Function: ('async ', 'add_client')
-# Function: ('', 'is_owner')
-# Function: ('', 'get_info')
-# Function: ('', 'get_room_clients_info')

@@ -52,11 +52,3 @@ class ClientSystem:
             trigger()
         else:
             print(f"Unknown state: {new_state}")
-# Class: ClientSystemEnum
-# Function: ('', '__init__')
-# Function: ('', 'on_enter_login')
-# Function: ('', 'on_enter_in_room')
-# Function: ('', 'on_enter_playing')
-# Function: ('', 'on_enter_game_over')
-# Function: ('', 'on_enter_exit')
-# Function: ('', 'change_state')

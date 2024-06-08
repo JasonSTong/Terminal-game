@@ -34,10 +34,3 @@ class TexasHoldem:
 
     def on_enter_game_over(self):
         print("Entering GameOver states")
-# Class: TexasHoldemEnum
-# Function: ('', '__init__')
-# Function: ('', 'on_enter_login')
-# Function: ('', 'on_enter_room_list')
-# Function: ('', 'on_enter_in_room')
-# Function: ('', 'on_enter_playing')
-# Function: ('', 'on_enter_game_over')

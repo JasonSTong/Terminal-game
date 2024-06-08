@@ -1,6 +1,6 @@
 from base import cm
-from game.domain.room import Room
-from game.states.client_state import ClientSystemEnum
+from domain.room import Room
+from states.client_state import ClientSystemEnum
 
 
 class RoomManager:
@@ -150,15 +150,3 @@ class RoomManager:
             for receiver_id in room.get_clients():
                 receiver = cm.get_client(receiver_id)
                 await receiver.send_message({'action': 'message', 'message': f"{sender_name}: {message}"})
-# Function: ('', '__init__')
-# Function: ('', 'incr_room_id')
-# Function: ('async ', 'create_room')
-# Function: ('', 'get_room')
-# Function: ('async ', 'delete_room')
-# Function: ('async ', 'list_rooms')
-# Function: ('async ', 'notify_room_status')
-# Function: ('async ', 'broadcast_to_room')
-# Function: ('async ', 'notify_all_client_room_status')
-# Function: ('async ', 'join_room')
-# Function: ('async ', 'leave_room')
-# Function: ('async ', 'chat_message')

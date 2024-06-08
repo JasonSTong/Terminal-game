@@ -42,9 +42,3 @@ class RoomSystem:
             trigger()
         else:
             print(f"Unknown state: {new_state}")
-# Class: RoomSystemEnum
-# Function: ('', '__init__')
-# Function: ('', 'on_playing')
-# Function: ('', 'on_enter_game_over')
-# Function: ('', 'on_enter_destroy_room')
-# Function: ('', 'change_state')

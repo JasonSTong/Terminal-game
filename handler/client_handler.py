@@ -1,6 +1,6 @@
-from game.manager.client_manager import ClientManager
-from game.manager.room_manager import RoomManager
-from game.states.client_state import ClientSystem
+from manager.client_manager import ClientManager
+from manager.room_manager import RoomManager
+from states.client_state import ClientSystem
 
 
 class ClientHandler:
@@ -32,9 +32,3 @@ class ClientHandler:
                 room = self.room_manager.get_room(client.room_id)
                 if room:
                     await self.room_manager.leave_room(client_id)
-
-# Function: ('', '__init__')
-# Function: ('async ', 'initialize')
-# Function: ('async ', 'enter')
-# Function: ('async ', 'exit')
-# Function: ('async ', 'handle')

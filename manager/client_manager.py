@@ -1,5 +1,5 @@
-from game.domain.server_client import Client
-from game.states.client_state import ClientSystemEnum
+from domain.server_client import Client
+from states.client_state import ClientSystemEnum
 
 
 class ClientManager:
@@ -74,19 +74,3 @@ class ClientManager:
             return 0, f"info: 客户端 {client_id} 已退出。"
         else:
             return -1, f"error: 客户端 {client_id} 不存在。"# Function: ('', '__init__')
-# Function: ('', 'incr_client_id')
-# Function: ('', 'create_client')
-# Function: ('', 'get_id_or_name')
-# Function: ('', 'add_client')
-# Function: ('', 'get_client')
-# Function: ('', 'remove_client')
-# Function: ('', 'get_clients_info')
-# Function: ('', 'get_clients_score')
-# Function: ('', 'get_max_score_by_client_ids')
-# Function: ('', 'set_owner')
-# Function: ('', 'set_room_id')
-# Function: ('', 'change_state')
-# Function: ('', 'change_username')
-# Function: ('async ', 'send_message')
-# Function: ('async ', 'send_client_info')
-# Function: ('async ', 'logout')

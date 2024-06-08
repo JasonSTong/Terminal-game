@@ -5,12 +5,11 @@ from urllib.parse import parse_qs, urlparse
 import websockets
 
 from base import cm, rm
-from game.domain.server_client import Client
-from game.handler.client_handler import ClientHandler
-from game.handler.room_handler import RoomHandler
-from game.states.client_state import ClientSystem
-from game.states.game_state import GameSystem
-from game.states.room_state import RoomSystem
+from domain.server_client import Client
+from handler.client_handler import ClientHandler
+from handler.room_handler import RoomHandler
+from states.client_state import ClientSystem
+from states.room_state import RoomSystem
 
 
 class WebSocketServer:
@@ -67,7 +66,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-# Function: ('', '__init__')
-# Function: ('async ', 'handle_message')
-# Function: ('async ', 'dispatch_message')
-# Function: ('async ', 'main')

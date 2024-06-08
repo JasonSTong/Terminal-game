@@ -1,6 +1,6 @@
 import json
 
-from game.states.client_state import ClientSystem, ClientSystemEnum
+from states.client_state import ClientSystem, ClientSystemEnum
 
 
 class Client:
@@ -81,16 +81,4 @@ class Client:
             'score': self.score,
             'room_id': self.room_id,
             'is_owner': self.is_owner
-        }# Function: ('', '__init__')
-# Function: ('', 'get_username')
-# Function: ('', 'get_client_id')
-# Function: ('', 'get_id_or_name')
-# Function: ('', 'change_username')
-# Function: ('', 'set_owner')
-# Function: ('', 'info')
-# Function: ('async ', 'send_message')
-# Function: ('async ', 'logout')
-# Function: ('async ', 'other_login')
-# Function: ('', 'change_state')
-# Function: ('', 'parse_json')
-# Function: ('', 'client_info')
+        }

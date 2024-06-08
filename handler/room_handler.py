@@ -1,4 +1,4 @@
-from game.states.room_state import RoomSystem
+from states.room_state import RoomSystem
 
 
 class RoomHandler:
@@ -38,8 +38,3 @@ class RoomHandler:
                 await self.room_manager.notify_room_status(room_id, client_id)
         elif action == "chat_message":
             await self.room_manager.chat_message(client_id, message.get("message"))
-# Function: ('', '__init__')
-# Function: ('async ', 'initialize')
-# Function: ('async ', 'enter')
-# Function: ('async ', 'exit')
-# Function: ('async ', 'handle')

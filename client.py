@@ -4,14 +4,14 @@ import os
 import aioconsole
 import websockets
 from wcwidth import wcswidth
-from colorama import Fore, Style, init
+from colorama import Fore, init
 
 import json
 
 init(autoreset=True)
 commands = {
     "create_room": "create 创建房间 create+<room_name>",
-    "change_name": "",
+    "change_name": "cname 修改昵称 cname+<name>",
     "join_room": "join 加入房间 join+<room_id>",
     "leave_room": "leave 离开房间 leave",
     "send_room_message": "message 发送消息 message+<message>",
@@ -355,30 +355,3 @@ class PokerClient:
 if __name__ == '__main__':
     client = PokerClient()
     asyncio.run(client.run())
-# Function: ('', 'cprint')
-# Function: ('', 'async_run')
-# Function: ('', 'format_message')
-# Function: ('', 'center_text')
-# Function: ('', 'left_align_text')
-# Function: ('', 'generate_table_string')
-# Function: ('', 'room_list')
-# Function: ('', 'room_player_status')
-# Function: ('', 'player_status')
-# Function: ('', 'help')
-# Function: ('', '__init__')
-# Function: ('async ', 'send_action')
-# Function: ('async ', 'connect')
-# Function: ('', 'sync_info')
-# Function: ('async ', 'list_rooms')
-# Function: ('async ', 'room_info')
-# Function: ('async ', 'player_info')
-# Function: ('async ', 'logout')
-# Function: ('async ', 'create_room')
-# Function: ('async ', 'join_room')
-# Function: ('async ', 'leave_room')
-# Function: ('async ', 'start_game')
-# Function: ('async ', 'send_message')
-# Function: ('async ', 'change_name')
-# Function: ('async ', 'handle_messages')
-# Function: ('async ', 'command_loop')
-# Function: ('async ', 'run')

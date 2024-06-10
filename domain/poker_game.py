@@ -1,17 +1,5 @@
+import random
 
-# 牌型权值（从低到高）
-hand_ranks = {
-    "high_card": 1,
-    "pair": 2,
-    "two_pair": 3,
-    "three_of_a_kind": 4,
-    "straight": 5,
-    "flush": 6,
-    "full_house": 7,
-    "four_of_a_kind": 8,
-    "straight_flush": 9,
-    "royal_flush": 10,
-}
 
 class Deck:
     def __init__(self):
@@ -54,19 +42,16 @@ class PokerHand:
         return ('high_card', sorted_values[-1][1])
 
 
-
 class PokerGame:
-    def __init__(self, players):
+    def __init__(self, players, deck):
         self.players = players
-        self.deck = Deck()
+        self.deck = deck
         self.pot = 0
-        self.community_cards = []
         self.current_bet = 0
-        self.player_bets = {player: 0 for player in players}
 
-    def deal_hole_cards(self):
+    def deal_cards_to_player(self, num):
         for player in self.players:
-            player.hand = self.deck.deal(2)
+            player.hand = self.deck.deal(num)
 
     def deal_community_cards(self, num):
         self.community_cards.extend(self.deck.deal(num))
@@ -98,13 +83,3 @@ class GameState:
     TURN = 'turn'
     RIVER = 'river'
     SHOWDOWN = 'showdown'
-# Function: ('', '__init__')
-# Function: ('', 'deal')
-# Function: ('', '__init__')
-# Function: ('', 'evaluate_hand')
-# Function: ('', '__init__')
-# Function: ('', 'deal_hole_cards')
-# Function: ('', 'deal_community_cards')
-# Function: ('async ', 'betting_round')
-# Function: ('async ', 'prompt_player_action')
-# Function: ('async ', 'showdown')

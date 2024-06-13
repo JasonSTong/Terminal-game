@@ -18,7 +18,8 @@ hand_ranks = {
     "straight_flush": 9,
     "royal_flush": 10,
 }
-
+# TODO game需要一个Interface, 用于定义游戏的基本操作(交由Manager控制), 游戏特有流程交由各个handler控制
+# TODO Interface 1. init_game操作 2. pot增加和玩家积分扣减 3. 积分结算
 
 class TexasHoldemGame:
     def __init__(self, clients: list[Client], game_uuid: str = str(uuid.uuid4())):

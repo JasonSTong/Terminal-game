@@ -2,7 +2,7 @@ from typing import Optional
 
 from base import cm
 from domain.server_client import Client
-from domain.texas_holdem_game import TexasHoldemGame
+from states.game_state import TexasHoldemSystem
 from states.room_state import RoomSystem, RoomSystemEnum
 
 
@@ -14,7 +14,7 @@ class Room:
         self.clients = clients
         self.owner = owner
         self.room_state = RoomSystem()
-        self.game_info: Optional[TexasHoldemGame] = None
+        self.game_state: Optional[TexasHoldemSystem] = None
 
     def remove_client(self, client_id):
         self.clients.remove(client_id)
@@ -82,7 +82,7 @@ class Room:
             'players': players
         }
 
-    def start_game(self, game_info: Optional[TexasHoldemGame]):
-        self.game_info = game_info
+    def start_game(self, game_state: Optional[TexasHoldemSystem]):
+        self.game_state = game_state
         self.room_state.change_state(RoomSystemEnum.PLAYING)
         return f"游戏开始"

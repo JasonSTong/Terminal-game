@@ -1,8 +1,7 @@
 import json
 from typing import Optional
 
-from domain.texas_holdem_game import TexasHoldemGameState, PlayerState
-from states.client_state import ClientSystem, ClientSystemEnum
+from states.client_state import ClientSystem, ClientSystemEnum, ClientGameBaseState
 
 
 class Client:
@@ -17,10 +16,8 @@ class Client:
         self.username = username
         self.password = password
         self.client_state = ClientSystem()
-        self.game_state: Optional[PlayerState] = PlayerState.WAITING
+        self.game_base_state = ClientGameBaseState.WAITING
 
-    def get_game_state(self):
-        return self.game_state
 
     def get_username(self):
         return self.username
@@ -66,6 +63,9 @@ class Client:
 
     def change_state(self, state: ClientSystemEnum):
         self.client_state.change_state(state)
+
+    def spend_score(self, spend_score):
+        self.score -= spend_score
 
     def parse_json(self):
         return json.dumps(

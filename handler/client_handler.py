@@ -4,8 +4,7 @@ from states.client_state import ClientSystem
 
 
 class ClientHandler:
-    def __init__(self, client_handler: dict[str, ClientSystem], room_manager:RoomManager, client_manager:ClientManager):
-        self.client_handler = client_handler
+    def __init__(self,room_manager:RoomManager, client_manager:ClientManager):
         self.room_manager = room_manager
         self.client_manager = client_manager
 

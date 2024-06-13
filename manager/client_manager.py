@@ -1,6 +1,5 @@
 from domain.server_client import Client
-from domain.texas_holdem_game import PlayerState
-from states.client_state import ClientSystemEnum
+from states.client_state import ClientSystemEnum, ClientGameBaseState
 
 
 class ClientManager:
@@ -76,7 +75,7 @@ class ClientManager:
         else:
             return -1, f"error: 客户端 {client_id} 不存在。"
 
-    async def change_game_state(self,client_id, state: PlayerState):
+    async def change_game_state(self,client_id, state: ClientGameBaseState):
         client = self.get_client(client_id)
         if client:
             client.game_state = state

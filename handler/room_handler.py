@@ -2,8 +2,7 @@ from states.room_state import RoomSystem
 
 
 class RoomHandler:
-    def __init__(self, room_system_list: dict[str, RoomSystem], room_manager, client_manager):
-        self.room_system_list = room_system_list
+    def __init__(self, room_manager, client_manager):
         self.room_manager = room_manager
         self.client_manager = client_manager
 
@@ -41,4 +40,3 @@ class RoomHandler:
 
         elif action == "ready":
             await self.room_manager.game_ready(client_id)
-

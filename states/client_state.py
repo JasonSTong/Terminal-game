@@ -6,19 +6,27 @@ from transitions import Machine
 class ClientSystemEnum(Enum):
     HALL = 'Hall'
     IN_ROOM = 'InRoom'
+    READY = 'Ready'
     PLAYING = 'Playing'
     GAME_OVER = 'GameOver'
     EXIT = 'Exit'
 
 
+class ClientGameBaseState(Enum):
+    WAITING = "waiting"
+    READY = "ready"
+    ACTIVE = "active"
+    SHUTDOWN = "shutdown"
+
 class ClientSystem:
-    # 登录 -> 大厅 -> 房间 -> 游戏 -> 结算积分 -> 大厅
+    # 登录 -> 大厅 -> 房间 -> 准备 -> 游戏 -> 结算积分 -> 大厅
     states = [state.value for state in ClientSystemEnum]
 
     def __init__(self):
         self.machine = Machine(model=self, states=ClientSystem.states, initial='Hall')
         self.machine.add_transition(trigger='enter_room', source='Hall', dest='InRoom', before='on_enter_in_room')
-        self.machine.add_transition(trigger='start_game', source='InRoom', dest='Playing', before='on_enter_playing')
+        self.machine.add_transition(trigger='ready', source='InRoom', dest='Ready', before='on_enter_ready')
+        self.machine.add_transition(trigger='start_game', source='Ready', dest='Playing', before='on_enter_playing')
         self.machine.add_transition(trigger='game_over', source='GameOver', dest='RoomList',
                                     before='on_enter_game_over')
         self.machine.add_transition(trigger='exit', source='*', dest='Hall', before='on_enter_exit')
@@ -36,6 +44,9 @@ class ClientSystem:
 
     def on_enter_in_room(self):
         print("Entering InRoom states")
+
+    def on_enter_ready(self):
+        print("Entering Ready states")
 
     def on_enter_playing(self):
         print("Entering Playing states")

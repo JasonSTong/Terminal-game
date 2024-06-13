@@ -1,8 +1,10 @@
 import uuid
 from enum import Enum
 
+from base import cm
 from domain.poker_game import Deck, PokerGame
 from domain.server_client import Client
+from states.client_state import ClientGameBaseState
 
 hand_ranks = {
     "high_card": 1,
@@ -18,28 +20,6 @@ hand_ranks = {
 }
 
 
-class PlayerState(Enum):
-    WAITING = "waiting"
-    READY = "ready"
-    ACTIVE = "active"
-    SHUTDOWN = "shutdown"
-
-
-class TexasHoldemGameState:
-    def __init__(self):
-        self.play_state = PlayerState.WAITING
-        self.give_up = False
-
-    def change_state(self, state):
-        self.play_state = state
-
-    def to_dict(self):
-        return {
-            "play_state": self.play_state,
-            "give_up": self.give_up
-        }
-
-
 class TexasHoldemGame:
     def __init__(self, clients: list[Client], game_uuid: str = str(uuid.uuid4())):
         self.game_uuid = game_uuid
@@ -52,14 +32,15 @@ class TexasHoldemGame:
         self.player_seats: list[dict] = self.init_player_seats()
         self.round = 0
         self.current_player = None
+        self.is_operating = False
 
     def init_player_seats(self):
         sits = []
         for player in self.players:
             if player.is_owner:
-                player.game_state = PlayerState.ACTIVE
+                player.game_base_state = ClientGameBaseState.ACTIVE
                 self.current_player = player.client_id
-            sits.append({"player_id": player.get_client_id(), "state": player.game_state})
+            sits.append({"player_id": player.get_client_id(), "state": player.game_base_state})
         return sits
 
     def next_player(self) -> str:
@@ -68,14 +49,18 @@ class TexasHoldemGame:
         :return: player_id
         """
         for i, player_site in enumerate(self.player_seats):
-            if player_site["state"].play_state == PlayerState.ACTIVE:
-                player_site["state"].player_state = PlayerState.WAITING
+            if player_site["state"].play_state == ClientGameBaseState.ACTIVE:
+                player_site["state"].player_state = ClientGameBaseState.WAITING
+                cm.get_client(player_site["player_id"]).game_base_state = ClientGameBaseState.WAITING
                 if len(self.player_seats) > i + 1:
                     next_player = self.player_seats[i + 1]
                 else:
                     next_player = self.player_seats[0]
+
                 client_id = next_player['player_id']
+                cm.get_client(client_id).game_base_state = ClientGameBaseState.ACTIVE
                 self.current_player = client_id
+
                 return client_id
 
     # TODO implement the game logic, 1. player bet 2. limit the bet amount 3. deal the community cards 4. showdown
@@ -127,3 +112,15 @@ class TexasHoldemGame:
         hands = {player: PokerHand(player.hand + self.community_cards) for player in self.players}
         best_player = max(self.players, key=lambda p: (hand_ranks[hands[p].rank], hands[p].high_card))
         return f"赢家是 {best_player.get_username()}， 他们的手牌是 {hands[best_player].cards}"
+
+    def client_permission(self, client_id):
+        """
+        Check if the client has permission to play the game
+        :param client_id:
+        :return:
+        """
+        if self.current_player == client_id and self.is_operating:
+            return 0, "ok"
+        name = cm.get_id_or_name(client_id)
+        err_msg = f"error: 当前玩家为: {name} .请等待你的回合"
+        return -1, err_msg

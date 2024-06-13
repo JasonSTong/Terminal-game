@@ -1,7 +1,7 @@
 from base import cm
 from domain.room import Room
-from domain.texas_holdem_game import PlayerState, TexasHoldemGame
-from states.client_state import ClientSystemEnum
+from states.client_state import ClientSystemEnum, ClientGameBaseState
+from states.game_state import TexasHoldemSystem
 
 
 class RoomManager:
@@ -156,14 +156,18 @@ class RoomManager:
         client = cm.get_client(client_id)
         room = self.get_room(client.room_id)
         all_ready = True
+        # change client game state to ready
         for clients in room.get_clients():
-            if clients.game_state != PlayerState.READY:
+            if clients.game_state != ClientGameBaseState.READY:
                 all_ready = False
                 break
+        # if all clients are ready, start game
         if all_ready:
-            game = TexasHoldemGame(room.get_clients())
-            #TODO
-        err, msg = cm.change_game_state(client_id, PlayerState.READY)
+            game = TexasHoldemSystem(room.get_clients())
+            room.start_game(game)
+            await self.broadcast_to_room(room.id, "info: 游戏开始")
+            room.game_state.big_blind()
+        err, msg = cm.change_game_state(client_id, ClientGameBaseState.READY)
         if err == 0:
             await self.notify_all_client_room_status(client.room_id)
         else:

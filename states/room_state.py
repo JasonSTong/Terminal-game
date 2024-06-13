@@ -27,6 +27,7 @@ class RoomSystem:
             RoomSystemEnum.DESTROY_ROOM: self.destroy
         }
 
+    # 获取当前房间的游戏类型, 并且调用该游戏类型的初始化方法
     def on_playing(self):
         print("Entering Login states")
 

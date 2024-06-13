@@ -20,7 +20,9 @@ hand_ranks = {
 
 class PlayerState(Enum):
     WAITING = "waiting"
+    READY = "ready"
     ACTIVE = "active"
+    SHUTDOWN = "shutdown"
 
 
 class TexasHoldemGameState:
@@ -31,10 +33,17 @@ class TexasHoldemGameState:
     def change_state(self, state):
         self.play_state = state
 
+    def to_dict(self):
+        return {
+            "play_state": self.play_state,
+            "give_up": self.give_up
+        }
+
 
 class TexasHoldemGame:
-    def __init__(self, clients: list[Client]):
-        self.game_uuid = str(uuid.uuid4().__str__().replace('-', ''))
+    def __init__(self, clients: list[Client], game_uuid: str = str(uuid.uuid4())):
+        self.game_uuid = game_uuid
+        self.game_type = "Texas Hold'em"
         self.players = clients
         self.deck = Deck()
         self.pot = 0
@@ -48,9 +57,9 @@ class TexasHoldemGame:
         sits = []
         for player in self.players:
             if player.is_owner:
-                player.game_info.change_state(PlayerState.ACTIVE)
+                player.game_state = PlayerState.ACTIVE
                 self.current_player = player.client_id
-            sits.append({"player_id": player.get_client_id(), "state": player.get_game_info()})
+            sits.append({"player_id": player.get_client_id(), "state": player.game_state})
         return sits
 
     def next_player(self) -> str:
@@ -70,6 +79,14 @@ class TexasHoldemGame:
                 return client_id
 
     # TODO implement the game logic, 1. player bet 2. limit the bet amount 3. deal the community cards 4. showdown
+    # TODO overall process of the game
+    #  1. init seat (在状态机内传入 game_uuid 进行初始化, room中需要新增game_uuid, room操作创建销毁游戏)
+    #  2. deal hole cards ( 初始化后调用状态机, 状态机应该操作 game_handler 控制)
+    #  3. betting round
+    #  4. deal community cards
+    #  5. betting round
+    #  6. showdown
+
     def deal_hole_cards(self):
         """
         Deal 2 cards to each player

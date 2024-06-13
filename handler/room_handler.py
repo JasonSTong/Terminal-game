@@ -38,3 +38,7 @@ class RoomHandler:
                 await self.room_manager.notify_room_status(room_id, client_id)
         elif action == "chat_message":
             await self.room_manager.chat_message(client_id, message.get("message"))
+
+        elif action == "ready":
+            await self.room_manager.game_ready(client_id)
+

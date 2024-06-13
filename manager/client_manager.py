@@ -1,4 +1,5 @@
 from domain.server_client import Client
+from domain.texas_holdem_game import PlayerState
 from states.client_state import ClientSystemEnum
 
 
@@ -73,4 +74,12 @@ class ClientManager:
             await client.logout()
             return 0, f"info: 客户端 {client_id} 已退出。"
         else:
-            return -1, f"error: 客户端 {client_id} 不存在。"# Function: ('', '__init__')
+            return -1, f"error: 客户端 {client_id} 不存在。"
+
+    async def change_game_state(self,client_id, state: PlayerState):
+        client = self.get_client(client_id)
+        if client:
+            client.game_state = state
+            return 0, f"info: 客户端 {client_id} 已准备。"
+        else:
+            return -1, f"error: 客户端 {client_id} 不存在。"

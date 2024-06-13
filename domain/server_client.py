@@ -1,7 +1,7 @@
 import json
 from typing import Optional
 
-from domain.texas_holdem_game import TexasHoldemGameState
+from domain.texas_holdem_game import TexasHoldemGameState, PlayerState
 from states.client_state import ClientSystem, ClientSystemEnum
 
 
@@ -17,10 +17,10 @@ class Client:
         self.username = username
         self.password = password
         self.client_state = ClientSystem()
-        self.game_info: Optional[TexasHoldemGameState] = None
+        self.game_state: Optional[PlayerState] = PlayerState.WAITING
 
-    def get_game_info(self):
-        return self.game_info
+    def get_game_state(self):
+        return self.game_state
 
     def get_username(self):
         return self.username

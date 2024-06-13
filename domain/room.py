@@ -1,5 +1,8 @@
+from typing import Optional
+
 from base import cm
 from domain.server_client import Client
+from domain.texas_holdem_game import TexasHoldemGame
 from states.room_state import RoomSystem, RoomSystemEnum
 
 
@@ -11,6 +14,7 @@ class Room:
         self.clients = clients
         self.owner = owner
         self.room_state = RoomSystem()
+        self.game_info: Optional[TexasHoldemGame] = None
 
     def remove_client(self, client_id):
         self.clients.remove(client_id)
@@ -64,10 +68,21 @@ class Room:
         return self.clients
 
     def room_status(self):
+        players = []
+        for client in self.clients:
+            players.append(
+                {'id': client.get_id_or_name(),
+                 'score': client.score,
+                 'is_owner': client.is_owner,
+                 'game_status': client.game_state
+                 }
+            )
         return {
             'room_id': self.id,
-            'players': [
-                {'id': cm.get_client(p).get_id_or_name(),
-                 'score': cm.get_client(p).score,
-                 'is_owner': cm.get_client(p).is_owner} for p in self.clients]
+            'players': players
         }
+
+    def start_game(self, game_info: Optional[TexasHoldemGame]):
+        self.game_info = game_info
+        self.room_state.change_state(RoomSystemEnum.PLAYING)
+        return f"游戏开始"

@@ -1,5 +1,6 @@
 from base import cm
 from domain.room import Room
+from domain.texas_holdem_game import PlayerState, TexasHoldemGame
 from states.client_state import ClientSystemEnum
 
 
@@ -150,3 +151,20 @@ class RoomManager:
             for receiver_id in room.get_clients():
                 receiver = cm.get_client(receiver_id)
                 await receiver.send_message({'action': 'message', 'message': f"{sender_name}: {message}"})
+
+    async def game_ready(self, client_id):
+        client = cm.get_client(client_id)
+        room = self.get_room(client.room_id)
+        all_ready = True
+        for clients in room.get_clients():
+            if clients.game_state != PlayerState.READY:
+                all_ready = False
+                break
+        if all_ready:
+            game = TexasHoldemGame(room.get_clients())
+            #TODO
+        err, msg = cm.change_game_state(client_id, PlayerState.READY)
+        if err == 0:
+            await self.notify_all_client_room_status(client.room_id)
+        else:
+            await cm.send_message(client_id, msg)
